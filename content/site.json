@@ -1,0 +1,9 @@
+{
+  "name": "Yu Wang",
+  "title": "Documentary filmmaker and photographer",
+  "reel": {
+    "src": "reel/reel.mp4",
+    "srcMobile": "reel/reel-720.mp4",
+    "poster": "reel/poster.jpg"
+  }
+}
