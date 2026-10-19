@@ -3,15 +3,15 @@
    ========================================================== */
 
 @font-face {
-  font-family: "Karla";
-  src: url("../fonts/karla-300.woff2") format("woff2");
+  font-family: 'Karla';
+  src: url('../fonts/karla-300.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Karla";
-  src: url("../fonts/karla-400.woff2") format("woff2");
+  font-family: 'Karla';
+  src: url('../fonts/karla-400.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@
   --line: #2a2a2a;
   --ph: #1d1d1d;
 
-  --font: "Karla", system-ui, sans-serif;
+  --font: 'Karla', system-ui, sans-serif;
   --gutter: 32px;
   --header-h: 73px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -139,7 +139,7 @@ button {
     color 0.3s ease;
 }
 .nav a::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -170,11 +170,24 @@ button {
 .nav a:focus-visible {
   outline-offset: -2px;
 }
+.nav a[data-tab='home'],
+.nav a[data-tab='home']:hover {
+  flex: 0 0 220px;
+  color: inherit;
+  transition: none;
+}
+.nav a[data-tab='home']::after {
+  transform: scaleX(0); /* overrides .is-current: the line only grows on hover */
+}
+.nav a[data-tab='home']:has(.nm:hover)::after {
+  transform: scaleX(1);
+}
 .nm {
   color: var(--primary);
   font-size: 15px;
   font-weight: 300;
   letter-spacing: 0.24em;
+  padding: 8px 12px 8px 14px; /* trailing letter-spacing makes the right side look wider */
 }
 
 /* ---------- Mobile bar and menu ---------- */
@@ -314,7 +327,7 @@ body.is-home .site-footer {
 }
 .card .clip::after,
 .mitem::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.28);
@@ -339,7 +352,7 @@ body.is-home .site-footer {
   padding-bottom: 8px;
 }
 .ul::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -369,7 +382,7 @@ body.is-home .site-footer {
   color: inherit;
 }
 .stretch::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -440,11 +453,11 @@ body.is-home .site-footer {
   transition: color 0.3s ease;
 }
 .flt:hover,
-.flt[aria-current="true"] {
+.flt[aria-current='true'] {
   color: var(--text);
 }
-.flt[aria-current="true"]::after {
-  content: "";
+.flt[aria-current='true']::after {
+  content: '';
   position: absolute;
   left: -8px;
   right: 0;
@@ -462,16 +475,16 @@ body.is-home .site-footer {
     transform: none;
   }
 }
-.flt[data-cat="documentary"],
-.vcard[data-cat="documentary"] {
+.flt[data-cat='documentary'],
+.vcard[data-cat='documentary'] {
   --flt-color: var(--accent);
 }
-.flt[data-cat="fiction"],
-.vcard[data-cat="fiction"] {
+.flt[data-cat='fiction'],
+.vcard[data-cat='fiction'] {
   --flt-color: var(--secondary);
 }
-.flt[data-cat="news"],
-.vcard[data-cat="news"] {
+.flt[data-cat='news'],
+.vcard[data-cat='news'] {
   --flt-color: var(--primary);
 }
 .flt .n {
@@ -529,7 +542,7 @@ body.is-home .site-footer {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.vcard[data-cat="news"] .hl {
+.vcard[data-cat='news'] .hl {
   color: #000;
 }
 .dot {
